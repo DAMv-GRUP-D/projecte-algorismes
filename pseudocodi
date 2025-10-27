@@ -1,0 +1,48 @@
+ALGORITHM TEMPERATURE
+	CONSTANTS
+		MSG_INPUT <- "Introduce a value: "
+		MSG_OK <- "Correct data"
+		MSG_WRONG <- "Incorrect data"
+	VARIABLES
+		aux: BOOLEAN
+		value, tries, average, i, tempAnt: INTEGER
+	BEGIN
+		tries <- 2
+		aux <- false
+		
+		DO
+			i <- 0
+			tempAnt <- 25
+			average <- 0
+			DO
+				WRITE MSG_INPUT
+				READ value
+				IF (value <= 35) AND (value >= 15) THEN
+					aux <- true
+				ENDIF
+				
+				IF (tempAnt - values) <= -10 AND (tempAnt - values) > 10
+					aux <- true
+				ENDIF
+				
+				IF aux THEN
+					average <- average + value
+				ENDIF
+				i <- i + 1
+			WHILE aux AND i < 6
+			
+			IF aux THEN
+				average <- average / 6
+				
+				IF average > 28 THEN
+					aux <- false
+				ENDIF
+			ENDIF
+				
+			IF aux THEN 
+				WRITE MSG_OK
+			ELSE
+				WRITE MSG_WRONG
+				tries <- tries - 1
+			ENDIF
+		WHILE !aux AND tries > 0
